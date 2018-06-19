@@ -99,9 +99,7 @@ initMap = () => {
  */
 updateRestaurants = () => {
   const cSelect = document.getElementById("cuisines-select");
-  console.log(cSelect);
   const nSelect = document.getElementById("neighborhoods-select");
-  console.log(nSelect);
 
   const cIndex = cSelect.selectedIndex;
   const nIndex = nSelect.selectedIndex;
