@@ -18,11 +18,13 @@
                 <a href="/">Restaurant Reviews</a>
             </h1>
         </nav>
-        <ul id="breadcrumb">
-            <li>
-                <a href="/">Home</a>
-            </li>
-        </ul>
+        <div id="breadcrumb">
+            <ul class="inner-breadcrumb">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <main id="maincontent">
@@ -33,11 +35,15 @@
 
         <!-- Beginning restaurant -->
         <section id="restaurant-container">
-            <h1 id="restaurant-name"></h1>
-            <img id="restaurant-img">
-            <p id="restaurant-cuisine"></p>
-            <p id="restaurant-address"></p>
-            <table id="restaurant-hours"></table>
+            <div class="inner-flex-container">
+                <h1 id="restaurant-name"></h1>
+                <img id="restaurant-img">
+                <p id="restaurant-cuisine"></p>
+            </div>
+            <div class="inner-flex-container rest-details">
+                <p id="restaurant-address"></p>
+                <table id="restaurant-hours"></table>
+            </div>
         </section>
         <!-- end restaurant -->
         <section id="reviews-container">
