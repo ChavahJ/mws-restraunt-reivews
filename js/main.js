@@ -84,9 +84,9 @@ initMap = () => {
         "pk.eyJ1IjoiY2hhdmFoaiIsImEiOiJjamlhNmN3b3gxMXJhM3FwMDF6dWp6NWZkIn0.bZe358T7ArL6F1CAgo34sw",
       maxZoom: 18,
       attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        'Map data &copy; <a tabindex="-1" href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a tabindex="-1" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a tabindex="-1" href="https://www.mapbox.com/">Mapbox</a>',
       id: "mapbox.streets"
     }
   ).addTo(newMap);
@@ -142,7 +142,6 @@ resetRestaurants = restaurants => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById("restaurants-list");
-  console.log(restaurants);
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
@@ -159,6 +158,8 @@ createRestaurantHTML = restaurant => {
 
   const imgLink = document.createElement("a");
   imgLink.href = href;
+  imgLink.setAttribute('tabindex', '-1');
+
   const image = document.createElement("img");
   image.className = "restaurant-img";
   image.src = DBHelper.smallImageUrlForRestaurant(restaurant);
