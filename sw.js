@@ -6,7 +6,9 @@ var urlsToCache = [
   '/js/main.js',
   '/js/restaurant_info.js',
   'index.html',
-  'restaurant.html'
+  'restaurant.html',
+    'img/placeholder.jpg',
+    'img/placeholder_small.jpg'
 ];
 
 self.addEventListener('install', function(event) {

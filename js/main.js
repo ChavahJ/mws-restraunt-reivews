@@ -192,6 +192,13 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+      document.querySelector(".leaflet-marker-icon").onkeypress = function(e) {
+          console.log(e.which);
+          if (e.which === 13) {
+              onClick();
+          }
+      };
+
     marker.on("click", onClick);
 
     function onClick() {
@@ -200,6 +207,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 };
 
+/**
+ * Register service worker for restaurant view
+ */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
