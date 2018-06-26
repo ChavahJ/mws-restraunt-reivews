@@ -161,7 +161,7 @@ class DBHelper {
   }
 
   /**
-   * Map marker for a restaurant.
+   * Map marker for a restaurant on home page.
    */
    static mapMarkerForRestaurant(restaurant, newMap) {
     // https://leafletjs.com/reference-1.3.0.html#marker
@@ -176,5 +176,22 @@ class DBHelper {
     marker.addTo(newMap);
     return marker;
   }
+
+    /**
+     * Map marker for a restaurant on info page.
+     */
+    static mapMarkerForRestaurantInfo(restaurant, newMap) {
+        // https://leafletjs.com/reference-1.3.0.html#marker
+        const marker = new L.marker(
+            [restaurant.latlng.lat, restaurant.latlng.lng],
+            {
+                alt: restaurant.name,
+            }
+        );
+        marker.addTo(newMap);
+        marker.bindPopup(restaurant.name);
+
+        return marker;
+    }
 }
 

@@ -31,14 +31,25 @@
         <!-- Beginning restaurant -->
         <section id="restaurant-container">
             <div class="inner-flex-container">
-                <h2 id="restaurant-name"></h2>
+                <h2 class="restaurant-name"></h2>
                 <img id="restaurant-img">
                 <p id="restaurant-cuisine"></p>
             </div>
             <div class="inner-flex-container rest-details">
                 <p id="restaurant-address"></p>
+                <p>
+                    <a id="restaurantWebsite" target="_blank">
+                        Visit <span class="restaurant-name"></span> online
+                        <svg style="width:18px;height:18px" viewBox="0 0 24 24">
+                            <path fill="#ac3b61" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                        </svg>
+                    </a>
+                </p>
                 <label id="restaurantHours">Opening Hours:</label>
                 <table id="restaurant-hours" aria-labelledby="restaurantHours"></table>
+                <p>
+                    <a href="#reviews-list">Read reviews &gt;</a>
+                </p>
             </div>
         </section>
         <section id="map-container">

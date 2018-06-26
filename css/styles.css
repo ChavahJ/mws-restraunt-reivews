@@ -73,6 +73,14 @@ nav h1 a {
   background-color: #bab2b5;
 }
 
+.leaflet-container:focus,
+.leaflet-control-zoom-in:focus,
+.leaflet-control-zoom-out:focus,
+.leaflet-marker-icon:focus {
+    outline: 3px solid #ac3b61;
+    outline-offset: 3px;
+}
+
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   background-color: #123c69;
@@ -184,7 +192,7 @@ nav h1 a {
     justify-content: center;
     align-items: center;
 }
-#restaurant-name {
+h2.restaurant-name {
   color: #ac3b61;
   font-size: 2rem;
   font-weight: 200;
@@ -192,14 +200,21 @@ nav h1 a {
   text-align: center;
   line-height: 1.1;
 }
-
+.rest-details a {
+    color: #ac3b61;
+}
+.rest-details a:focus,
+.rest-details a:hover,
+.rest-details a:active {
+    color: rgba(172, 59, 97, 0.5);
+}
 #restaurant-img {
   max-width: 100%;
   margin: 0 auto;
 }
 
 #restaurant-address {
-  margin: 1rem 0;
+  margin: 0;
 }
 
 #restaurant-cuisine {
@@ -307,7 +322,6 @@ nav h1 a {
     }
     #restaurant-hours {
         width: 100%;
-        margin-left: 1rem;
     }
     #restaurant-hours td:nth-child(odd) {
         text-align: left;

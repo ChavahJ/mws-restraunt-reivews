@@ -56,14 +56,14 @@ initMap = () => {
             "pk.eyJ1IjoiY2hhdmFoaiIsImEiOiJjamlhNmN3b3gxMXJhM3FwMDF6dWp6NWZkIn0.bZe358T7ArL6F1CAgo34sw",
           maxZoom: 18,
           attribution:
-            'Map data &copy; <a tabindex="-1" href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a tabindex="-1" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a tabindex="-1" href="https://www.mapbox.com/">Mapbox</a>',
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           id: "mapbox.streets"
         }
       ).addTo(newMap);
       fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(restaurant, newMap);
+      DBHelper.mapMarkerForRestaurantInfo(restaurant, newMap);
     }
   });
 };
@@ -72,11 +72,16 @@ initMap = () => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
-  const name = document.getElementById("restaurant-name");
-  name.innerHTML = restaurant.name;
+  const name1 = document.querySelector("h2.restaurant-name");
+  name1.innerHTML = restaurant.name;
 
   const address = document.getElementById("restaurant-address");
   address.innerHTML = restaurant.address;
+
+  const website = document.getElementById("restaurantWebsite");
+  const name2 = document.querySelector("span.restaurant-name");
+  website.href = restaurant.website;
+  name2.innerHTML = restaurant.name;
 
   const image = document.getElementById("restaurant-img");
   image.className = "restaurant-img";

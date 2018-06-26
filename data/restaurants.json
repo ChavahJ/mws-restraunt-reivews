@@ -6,6 +6,7 @@
     "photograph": "1.jpg",
     "photograph_small": "1_small.jpg",
     "address": "171 E Broadway, New York, NY 10002",
+    "website": "https://www.missionchinesefood.com/",
     "latlng": {
       "lat": 40.713829,
       "lng": -73.989667
@@ -17,8 +18,8 @@
       "Wednesday": "5:30 pm - 12:00 am",
       "Thursday": "5:30 pm - 12:00 am",
       "Friday": "5:30 pm - 12:00 am",
-      "Saturday": "12:00 pm - 4:00 pm, 5:30 pm - 12:00 am",
-      "Sunday": "12:00 pm - 4:00 pm, 5:30 pm - 11:00 pm"
+      "Saturday": "12:00 pm - 4:00 pm, <br>5:30 pm - 12:00 am",
+      "Sunday": "12:00 pm - 4:00 pm, <br>5:30 pm - 11:00 pm"
     },
     "reviews": [{
         "name": "Steve",
@@ -46,6 +47,7 @@
     "photograph": "2.jpg",
     "photograph_small": "2_small.jpg",
     "address": "919 Fulton St, Brooklyn, NY 11238",
+    "website": "https://www.pizzalovesemily.com/",
     "latlng": {
       "lat": 40.683555,
       "lng": -73.966393
@@ -58,7 +60,7 @@
       "Thursday": "5:30 pm - 11:00 pm",
       "Friday": "5:30 pm - 11:00 pm",
       "Saturday": "5:00 pm - 11:30 pm",
-      "Sunday": "12:00 pm - 3:00 pm, 5:00 pm - 11:00 pm"
+      "Sunday": "12:00 pm - 3:00 pm, <br>5:00 pm - 11:00 pm"
     },
     "reviews": [{
         "name": "Steph",
@@ -86,6 +88,7 @@
     "photograph": "3.jpg",
     "photograph_small": "3_small.jpg",
     "address": "1 E 32nd St, New York, NY 10016",
+    "website": "https://baekjeongnyc.com/",
     "latlng": {
       "lat": 40.747143,
       "lng": -73.985414
@@ -126,6 +129,7 @@
     "photograph": "4.jpg",
     "photograph_small": "4_small.jpg",
     "address": "205 E Houston St, New York, NY 10002",
+    "website": "https://www.katzsdelicatessen.com/",
     "latlng": {
       "lat": 40.722216,
       "lng": -73.987501
@@ -166,6 +170,7 @@
     "photograph": "5.jpg",
     "photograph_small": "5_small.jpg",
     "address": "261 Moore St, Brooklyn, NY 11206",
+    "website": "http://www.robertaspizza.com/",
     "latlng": {
       "lat": 40.705089,
       "lng": -73.933585
@@ -206,6 +211,7 @@
     "photograph": "6.jpg",
     "photograph_small": "6_small.jpg",
     "address": "454 Van Brunt St, Brooklyn, NY 11231",
+    "website": "http://hometownbarbque.com/",
     "latlng": {
       "lat": 40.674925,
       "lng": -74.016162
@@ -246,6 +252,7 @@
     "photograph": "7.jpg",
     "photograph_small": "7_small.jpg",
     "address": "430 E 9th St, New York, NY 10009",
+    "website": "http://www.superiorityburger.com/",
     "latlng": {
       "lat": 40.727397,
       "lng": -73.983645
@@ -253,7 +260,7 @@
     "cuisine_type": "American",
     "operating_hours": {
       "Monday": "11:30 am - 10:00 pm",
-      "Tuesday": "Closed",
+      "Tuesday": "11:30 am - 10:00 pm",
       "Wednesday": "11:30 am - 10:00 pm",
       "Thursday": "11:30 am - 10:00 pm",
       "Friday": "11:30 am - 10:00 pm",
@@ -286,19 +293,20 @@
     "photograph": "8.jpg",
     "photograph_small": "8_small.jpg",
     "address": "131 Sullivan St, New York, NY 10012",
+    "website": "http://www.thedutchnyc.com/",
     "latlng": {
       "lat": 40.726584,
       "lng": -74.002082
     },
     "cuisine_type": "American",
     "operating_hours": {
-      "Monday": "11:30 am - 3:00 pm, 5:30 pm - 11:00 pm",
-      "Tuesday": "11:30 am - 3:00 pm, 5:30 pm - 11:00 pm",
-      "Wednesday": "11:30 am - 3:00 pm, 5:30 pm - 11:00 pm",
-      "Thursday": "11:30 am - 3:00 pm, 5:30 pm - 11:00 pm",
-      "Friday": "11:30 am - 3:00 pm, 5:30 pm - 11:30 pm",
-      "Saturday": "10:00 am - 3:00 pm, 5:30 pm - 11:30 pm",
-      "Sunday": "10:00 am - 3:00 pm, 5:30 pm - 11:00 pm"
+      "Monday": "11:30 am - 3:00 pm, <br>5:30 pm - 11:00 pm",
+      "Tuesday": "11:30 am - 3:00 pm, <br>5:30 pm - 11:00 pm",
+      "Wednesday": "11:30 am - 3:00 pm, <br>5:30 pm - 11:00 pm",
+      "Thursday": "11:30 am - 3:00 pm, <br>5:30 pm - 11:00 pm",
+      "Friday": "11:30 am - 3:00 pm, <br>5:30 pm - 11:30 pm",
+      "Saturday": "10:00 am - 3:00 pm, <br>5:30 pm - 11:30 pm",
+      "Sunday": "10:00 am - 3:00 pm, <br>5:30 pm - 11:00 pm"
     },
     "reviews": [{
         "name": "Steve",
@@ -326,6 +334,7 @@
     "photograph": "9.jpg",
     "photograph_small": "9_small.jpg",
     "address": "1209 Jackson Ave, Queens, NY 11101",
+    "website": "http://ramennyc.wixsite.com/popup",
     "latlng": {
       "lat": 40.743797,
       "lng": -73.950652
@@ -366,6 +375,7 @@
     "photograph": "10.jpg",
     "photograph_small": "10_small.jpg",
     "address": "5-48 49th Ave, Queens, NY 11101",
+    "website": "https://henrinyc.com/casa-enrique/",
     "latlng": {
       "lat": 40.743394,
       "lng": -73.954235
