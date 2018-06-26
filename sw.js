@@ -1,14 +1,34 @@
 var CACHE_NAME = 'mwsrr-cache-v1';
 var urlsToCache = [
+    '/',
+    'index.html',
+    'restaurant.html',
   '/css/styles.css',
   '/data/restaurants.json',
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
-  'index.html',
-  'restaurant.html',
-    'img/placeholder.jpg',
-    'img/placeholder_small.jpg'
+    './img/1.jgp',
+    './img/1_small.jpg',
+    './img/2.jgp',
+    './img/2_small.jpg',
+    './img/3.jgp',
+    './img/3_small.jpg',
+    './img/4.jgp',
+    './img/4_small.jpg',
+    './img/5.jgp',
+    './img/5_small.jpg',
+    './img/6.jgp',
+    './img/6_small.jpg',
+    './img/7.jgp',
+    './img/7_small.jpg',
+    './img/8.jgp',
+    './img/8_small.jpg',
+    './img/9.jgp',
+    './img/9_small.jpg',
+    './img/10.jgp',
+    './img/10_small.jpg',
+
 ];
 
 self.addEventListener('install', function(event) {
@@ -16,7 +36,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Opened cache');
+        //console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
   );
