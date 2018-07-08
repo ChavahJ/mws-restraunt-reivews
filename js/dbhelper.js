@@ -8,79 +8,94 @@ class DBHelper {
      * Change this to restaurants.json file location on your server.
      */
     static get DATABASE_URL() {
-        const port = 3000; // Change this to your server port
-        return `http://localhost:${port}/data/restaurants.json`;
+        const port = 1337; // Change this to your server port
+        return `http://localhost:${port}/restaurants`;
     }
 
     /**
      * Fetch all restaurants.
      */
     static fetchRestaurants(callback) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', DBHelper.DATABASE_URL);
-        xhr.onload = () => {
-            if (xhr.status === 200) { // Got a success response from server!
-                const json = JSON.parse(xhr.responseText);
-                const restaurants = json.restaurants;
-                callback(null, restaurants);
-            } else { // Oops!. Got an error from server.
-                const error = (`Request failed. Returned status of ${xhr.status}`);
-                callback(error, null);
-            }
+        const dbName = 'restaurantDb';
+        let request = indexedDB.open(dbName, 1);
+        request.onerror = function(event) {
+            alert("Database error: " + event.target.errorCode);
         };
-        xhr.send();
+
+        fetch(DBHelper.DATABASE_URL).then(function(response){
+                const data = response.json();
+                console.log(data);
+                request.onupgradeneeded = function(event) {
+                    const db = event.target.result;
+                    const objectStore = db.createObjectStore("restaurants", { keyPath: "id" });
+                    objectStore.createIndex("cuisine", "cuisine", { unique: false });
+                    objectStore.createIndex("neighborhood", "neighborhood", { unique: false });
+
+                    objectStore.transaction.oncomplete = function() {
+                        const restaurantObjectStore = db.transaction("restaurants", "readwrite").objectStore("restaurants");
+                        data.forEach(function(restaurant) {
+                            restaurantObjectStore.add(restaurant);
+                            console.log(restaurant.name);
+                        });
+                    };
+
+                };
+                callback(null, restaurants);
+            })
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
     }
 
     /**
      * Fetch a restaurant by its ID.
      */
-    static fetchRestaurantById(id, callback) {
-        // fetch all restaurants with proper error handling.
-        DBHelper.fetchRestaurants((error, restaurants) => {
-            if (error) {
-                callback(error, null);
-            } else {
-                const restaurant = restaurants.find(r => r.id == id);
-                if (restaurant) { // Got the restaurant
-                    callback(null, restaurant);
-                } else { // Restaurant does not exist in the database
-                    callback('Restaurant does not exist', null);
-                }
-            }
-        });
-    }
+    // static fetchRestaurantById(id, callback) {
+    //     // fetch all restaurants with proper error handling.
+    //     DBHelper.fetchRestaurants((error, restaurants) => {
+    //         if (error) {
+    //             callback(error, null);
+    //         } else {
+    //             const restaurant = restaurants.find(r => r.id == id);
+    //             if (restaurant) { // Got the restaurant
+    //                 callback(null, restaurant);
+    //             } else { // Restaurant does not exist in the database
+    //                 callback('Restaurant does not exist', null);
+    //             }
+    //         }
+    //     });
+    // }
 
     /**
      * Fetch restaurants by a cuisine type with proper error handling.
      */
-    static fetchRestaurantByCuisine(cuisine, callback) {
-        // Fetch all restaurants  with proper error handling
-        DBHelper.fetchRestaurants((error, restaurants) => {
-            if (error) {
-                callback(error, null);
-            } else {
-                // Filter restaurants to have only given cuisine type
-                const results = restaurants.filter(r => r.cuisine_type == cuisine);
-                callback(null, results);
-            }
-        });
-    }
+    // static fetchRestaurantByCuisine(cuisine, callback) {
+    //     // Fetch all restaurants  with proper error handling
+    //     DBHelper.fetchRestaurants((error, restaurants) => {
+    //         if (error) {
+    //             callback(error, null);
+    //         } else {
+    //             // Filter restaurants to have only given cuisine type
+    //             const results = restaurants.filter(r => r.cuisine_type == cuisine);
+    //             callback(null, results);
+    //         }
+    //     });
+    // }
 
     /**
      * Fetch restaurants by a neighborhood with proper error handling.
      */
-    static fetchRestaurantByNeighborhood(neighborhood, callback) {
-        // Fetch all restaurants
-        DBHelper.fetchRestaurants((error, restaurants) => {
-            if (error) {
-                callback(error, null);
-            } else {
-                // Filter restaurants to have only given neighborhood
-                const results = restaurants.filter(r => r.neighborhood == neighborhood);
-                callback(null, results);
-            }
-        });
-    }
+    // static fetchRestaurantByNeighborhood(neighborhood, callback) {
+    //     // Fetch all restaurants
+    //     DBHelper.fetchRestaurants((error, restaurants) => {
+    //         if (error) {
+    //             callback(error, null);
+    //         } else {
+    //             // Filter restaurants to have only given neighborhood
+    //             const results = restaurants.filter(r => r.neighborhood == neighborhood);
+    //             callback(null, results);
+    //         }
+    //     });
+    // }
 
     /**
      * Fetch restaurants by a cuisine and a neighborhood with proper error handling.
