@@ -10,7 +10,7 @@ var urlsToCache = [
     '/js/dbhelper.js',
     '/js/main.js',
     '/js/restaurant_info.js',
-    '/img/1.jgp',
+    '/img/1.jpg',
     '/img/1_small.jpg',
     '/img/2.jgp',
     '/img/2_small.jpg',
