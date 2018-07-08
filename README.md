@@ -8,11 +8,11 @@ For the **Restaurant Reviews** projects, you will incrementally convert a static
 
 ### How To View This Project
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) is easy to install and launch.  
+1. Download the project, and start up a simple HTTP server to serve up the site files on your local computer. [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) is easy to install and launch.  Once launched, choose the project folder and start the web server.
 
    ![Web Server for Chrome Setup](img/web-server-for-chrome.PNG)
 
-2. With your server running, visit the site: `http://localhost:3000`
+2. With the server running, visit the site: `http://localhost:3000`
 
 ## Project ADDENDUM:
 
